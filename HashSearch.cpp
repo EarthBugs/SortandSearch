@@ -35,6 +35,14 @@ void HashSearch::HashTable()
 	}
 }
 
+void HashSearch::PrintHashTable()
+{
+	for (int index = 0; index <= int(MAXSIZE * 1.4); index++)
+	{
+		cout << hashtable[index] << " ";
+	}
+}
+
 void HashSearch::RandomValue()
 {
 	long random = rand();
@@ -45,5 +53,15 @@ void HashSearch::RandomValue()
 void HashSearch::Search()
 {
 	int hashindex = value % MAXSIZE;//计算该元素在哈希表中的下标
-	if(hashtable[hashindex] == value)
+	//if(hashtable[hashindex] == value)
+}
+
+int HashSearch::GetValue()
+{
+	return value;
+}
+
+int HashSearch::GetIndex()
+{
+	return index;
 }
