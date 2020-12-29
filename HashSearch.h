@@ -7,10 +7,11 @@ class HashSearch
 {
 private:
 	int data[MAXSIZE];
-	int hashtable[int(MAXSIZE * 1.4)]{ -1 };//散列表初始化为-1
+	int hashtable[int(MAXSIZE * 1.4)];//散列表
 	int value;//待查值
 	int index = -1;//查找到的下标
 public:
+	HashSearch();//构造函数
 	void RandomArray();//随机生成待查数组
 	void PrintArray();//打印数组
 	void HashTable();//生成哈希表
