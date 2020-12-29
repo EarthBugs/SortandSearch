@@ -2,7 +2,7 @@
 #include "HashSearch.h"
 using namespace std;
 
-void HashSearch::GetRandomArray()
+void HashSearch::RandomArray()
 {
 	srand(time(NULL));
 	data[0] = 0;
@@ -21,23 +21,29 @@ void HashSearch::PrintArray()
 	}
 }
 
-void HashSearch::GetHashTable()
+void HashSearch::HashTable()
 {
 	//遍历data数组，计算每个元素在哈希表中的下标，并写入哈希表
-	for (int dataindex = 0, hashindex; index < MAXSIZE; index++)
+	for (int dataindex = 0, hashindex; dataindex < MAXSIZE; dataindex++)
 	{
 		hashindex = data[dataindex] % MAXSIZE;//计算该元素在哈希表中的下标
-		//循环遍历表，直到index遍历到hashindex-1时停止
-		for (int index = hashindex; index != hashindex - 1; index = (++index) % MAXSIZE)
-		{
-			if(data[dataindex] == )
-		}
+		if (hashtable[hashindex] == -1) hashtable[hashindex] = data[dataindex];//若对应位数为空，则写入
+		else
+			//否则循环遍历表，直到index遍历到hashindex-1时停止
+			for (int index = hashindex; index != hashindex - 1; index = (++index) % MAXSIZE)
+				if (hashtable[index] == -1) hashtable[index] = data[dataindex]; break;//当遇到空位置时，写入并退出循环。否则继续查找下一个元素
 	}
 }
 
-void HashSearch::GetRandomValue()
+void HashSearch::RandomValue()
 {
 	long random = rand();
 	int index = 1 + random % MAXSIZE;
 	value = data[index];
+}
+
+void HashSearch::Search()
+{
+	int hashindex = value % MAXSIZE;//计算该元素在哈希表中的下标
+	if(hashtable[hashindex] == value)
 }

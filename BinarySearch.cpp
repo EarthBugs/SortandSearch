@@ -2,7 +2,7 @@
 #include "BinarySearch.h"
 using namespace std;
 
-void BinarySearch::GetRandomArray()
+void BinarySearch::RandomArray()
 {
 	srand(time(NULL));
 	data[0] = 0;
@@ -21,7 +21,7 @@ void BinarySearch::PrintArray()
 	}
 }
 
-void BinarySearch::GetRandomValue()
+void BinarySearch::RandomValue()
 {
 	long random = rand();
 	int index = 1 + random % MAXSIZE;
